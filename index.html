@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Login & Register | Toggle Forms</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <!-- hidden radio toggles for pure CSS switching (no JavaScript) -->
+      <input
+        type="radio"
+        name="formToggle"
+        id="loginToggle"
+        class="toggle-radio"
+        checked
+      />
+      <input
+        type="radio"
+        name="formToggle"
+        id="registerToggle"
+        class="toggle-radio"
+      />
+
+      <div class="forms-container">
+        <!-- ================= LOGIN FORM ================= -->
+        <div class="form login-form">
+          <h2>🔐 Login Form</h2>
+          <form
+            id="loginForm"
+            onsubmit="
+              event.preventDefault();
+              alert('✨ Welcome! Login successful (demo). ✨');
+            "
+          >
+            <div class="input-group">
+              <label>👤 Username</label>
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>🔒 Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <div class="button-group">
+              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+            <div class="toggle-link">
+              <label for="registerToggle">✨ Create New Account ✨</label>
+            </div>
+          </form>
+        </div>
+
+        <!-- ================= REGISTRATION FORM ================= -->
+        <div class="form register-form">
+          <h2>📝 Registration Form</h2>
+          <form
+            id="registerForm"
+            onsubmit="
+              event.preventDefault();
+              alert('🎉 Account created successfully! (demo) 🎉');
+            "
+          >
+            <!-- First & Last Name side by side -->
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+              <div style="flex: 1">
+                <div class="input-group">
+                  <label>First Name</label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="John"
+                    required
+                  />
+                </div>
+              </div>
+              <div style="flex: 1">
+                <div class="input-group">
+                  <label>Last Name</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Doe"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Department dropdown -->
+            <div class="input-group">
+              <label>📚 Department</label>
+              <select name="department">
+                <option value="cs" selected>Computer Science</option>
+                <option value="it">Information Technology</option>
+                <option value="ece">Electronics & Communication</option>
+                <option value="mech">Mechanical Engineering</option>
+              </select>
+            </div>
+
+            <!-- Gender radio buttons -->
+            <div class="extra-margin">
+              <span class="fieldset-title">⚥ Gender</span>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="male" /> Male
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="female" /> Female
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="other" /> Other
+                </label>
+              </div>
+            </div>
+
+            <!-- Hobbies checkboxes -->
+            <div class="extra-margin">
+              <span class="fieldset-title">🎯 Hobbies</span>
+              <div class="checkbox-group">
+                <label class="check-option">
+                  <input type="checkbox" name="hobby" value="reading" /> Reading
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="hobby" value="sports" /> Sports
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="hobby" value="music" /> Music
+                </label>
+                <label class="check-option">
+                  <input type="checkbox" name="hobby" value="travel" /> Travel
+                </label>
+              </div>
+            </div>
+
+            <!-- Register & Clear buttons -->
+            <div class="button-group">
+              <button type="submit" class="btn btn-primary">Register</button>
+              <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+
+            <!-- Toggle back to login -->
+            <div class="toggle-link">
+              <label for="loginToggle"
+                >🔁 Already have an account? Sign In</label
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

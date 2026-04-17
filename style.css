@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(145deg, #e0eafc 0%, #cfdef3 100%);
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+/* main card container */
+.card {
+  max-width: 520px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 2rem;
+  box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.35), 0 8px 18px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+/* hidden radio toggles (pure CSS switch) */
+.toggle-radio {
+  display: none;
+}
+
+/* forms wrapper */
+.forms-container {
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+/* both forms base style */
+.form {
+  display: none;
+  animation: fade 0.25s ease-out;
+}
+
+@keyframes fade {
+  0% { opacity: 0; transform: translateY(8px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* radio controlled visibility */
+#loginToggle:checked ~ .forms-container .login-form {
+  display: block;
+}
+
+#registerToggle:checked ~ .forms-container .register-form {
+  display: block;
+}
+
+/* form headings */
+.form h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  color: #1a2c3e;
+  letter-spacing: -0.3px;
+  border-left: 5px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+/* input groups */
+.input-group {
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  color: #1f3a4b;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.input-group input,
+.input-group select {
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fefefe;
+  transition: all 0.2s;
+  font-family: inherit;
+  outline: none;
+  color: #0f172a;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+/* radio group + checkbox group styling */
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+  align-items: center;
+}
+
+.radio-option, .check-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.radio-option input, .check-option input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+
+.fieldset-title {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #1f3a4b;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.extra-margin {
+  margin-bottom: 1.2rem;
+}
+
+/* buttons row */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin: 1.8rem 0 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.8rem 0;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 8px rgba(59,130,246,0.2);
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+  background: #e6edf5;
+  transform: translateY(-2px);
+}
+
+/* toggle link (create new account / back to login) */
+.toggle-link {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #eef2f8;
+  padding-top: 1.2rem;
+}
+
+.toggle-link label {
+  color: #3b82f6;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.toggle-link label:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* responsive */
+@media (max-width: 480px) {
+  .forms-container {
+    padding: 1.5rem;
+  }
+  .form h2 {
+    font-size: 1.6rem;
+  }
+  .button-group {
+    flex-direction: column;
+  }
+  .radio-group, .checkbox-group {
+    gap: 0.8rem;
+  }
+}
+
+/* ensure select background */
+select {
+  background-color: white;
+}
